@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cipher | Encryption &amp; Decryption</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" th:href="@{/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/signin.css}" />
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
+    <body class="text-center">
+        <form class="form-signin" method="POST" th:action="@{/motpcaptcha}" th:object="${captcha}">
+            <h1 class="h3 mb-3 font-weight-normal">MOTP Verification</h1>
+            <label class="sr-only">Enter OTP Code</label>
+            <input th:field="*{otp}" type="text" class="form-control mb-2" placeholder="Enter OTP Code" required autofocus>
+            <div class="g-recaptcha mb-2" data-sitekey="6LfE8vgUAAAAACVJW1XuBcIKQ45BxY1HAEOrREO2"></div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Validate</button>
+        </form>
+    </body>
+</html>

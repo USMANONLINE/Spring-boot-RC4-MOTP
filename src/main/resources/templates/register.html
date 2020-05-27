@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cipher | Encryption &amp; Decryption</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" th:href="@{/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/signin.css}" />
+    </head>
+    <body class="text-center">
+        <form th:action="@{/signup}" th:object="${user}" method="POST" class="form-signin">
+            <div th:if="${duplicate_error}">
+                <div class="alert alert-danger" role="alert" th:text="${duplicate_msg}"></div>
+            </div>
+            <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+            <label class="sr-only">Full Name</label>
+            <input th:field="*{fullname}" type="text" class="form-control mb-2" placeholder="Full Name" required autofocus>
+            <label class="sr-only">Email Address</label>
+            <input th:field="*{email}" type="email" class="form-control mb-2" placeholder="Email Address" required>
+            <label class="sr-only">Phone Number</label>
+            <input th:field="*{phone}" type="tel" class="form-control mb-2" placeholder="Phone Number" required>
+            <label class="sr-only">Country</label>
+            <input th:field="*{country}" type="text" class="form-control mb-2" placeholder="Country" required>
+            <label class="sr-only">Password</label>
+            <input th:field="*{password}" type="password" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+            <div>Already registered  ? <a th:href="@{/signin}">Sign in</a></div>
+        </form>
+    </body>
+</html>
