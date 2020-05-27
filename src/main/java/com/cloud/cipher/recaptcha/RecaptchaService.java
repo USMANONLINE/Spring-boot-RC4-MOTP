@@ -19,7 +19,7 @@ public class RecaptchaService {
     
     public String verifyCapTcha (String ip, String recaptchaResponse) {
         Map<String, String> body = new HashMap<>();
-        body.put("secret", "6LfE8vgUAAAAACvTaoh7_uiu2xv2GT2RHBoKE6Q1");
+        body.put("secret", "");
         body.put("response", recaptchaResponse);
         body.put("remoteip", ip);
         log.debug("Request body for recaptcha: {}", body);
